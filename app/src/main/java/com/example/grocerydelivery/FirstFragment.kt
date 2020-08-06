@@ -34,9 +34,11 @@ class FirstFragment : Fragment() {
         */
 
         val foodItems = listOf(
-            FoodItem("Tofu Scramble", 4.99, "Delicious"),
+            FoodItem("Tofu Scramble", 4.99, "Delicious", true),
             FoodItem("Curry Chicken", 5.99, "Delicious"),
-            FoodItem("Pizza Supreme", 6.99, "Delicious")
+            FoodItem("Pizza Supreme", 6.99, "Delicious"),
+            FoodItem("Pho Noodles", 7.99, "Delicious", true),
+            FoodItem("Beef Burrito", 8.99, "Delicious")
         )
 
         restaurantRecyclerView.apply {
