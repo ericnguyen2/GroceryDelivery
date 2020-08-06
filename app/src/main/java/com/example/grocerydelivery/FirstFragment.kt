@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.grocerydelivery.data.FoodItem
 import kotlinx.android.synthetic.main.fragment_first.*
 
 /**
@@ -16,8 +17,8 @@ import kotlinx.android.synthetic.main.fragment_first.*
 class FirstFragment : Fragment() {
 
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_first, container, false)
@@ -32,9 +33,15 @@ class FirstFragment : Fragment() {
         }
         */
 
+        val foodItems = listOf(
+            FoodItem("Tofu Scramble", 4.99, "Delicious"),
+            FoodItem("Curry Chicken", 5.99, "Delicious"),
+            FoodItem("Pizza Supreme", 6.99, "Delicious")
+        )
+
         restaurantRecyclerView.apply {
             layoutManager = LinearLayoutManager(activity)
-            adapter = RestaurantsAdapter()
+            adapter = RestaurantsAdapter(foodItems)
         }
     }
 }
